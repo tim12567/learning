@@ -1,24 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# def drive(request):
-#     text = '''<h1>"Изучаем django"</h1>
-# <strong>Автор</strong>: <i>Пармон Т.С.</i><br>
-# <i>Имя: <strong>Тимофей</strong></i><br>
-# <i>Отчество: <strong>Сергеевич</strong></i><br>
-# <i>Фамилия: <strong>Пармон</strong></i><br>
-# <i>email: <strong>mysite@.com</strong></i>'''
-   
-#     return HttpResponse(text)
 
-def about(request):
-    text = '''
-<i>Имя: <strong>Тимофей</strong></i><br>
-<i>Отчество: <strong>Сергеевич</strong></i><br>
-<i>Фамилия: <strong>Пармон</strong></i><br>
-<i>email: <strong>mysite@.com</strong></i>'''
+autor = {'Имя': 'Тимофей', 'Отчество': 'Сергеевич', 'Фамилия': 'Пармон', 
+'email': 'mysite@.com'}
+
+def drive(request):
+    text = '''<h1>"Изучаем django"</h1>
+<strong>Автор</strong>: <i>Пармон Т.С.</i><br>'''
    
     return HttpResponse(text)
+
+
+def about(request):
+    test = f'''Имя: <strong>{autor['Имя']}</strong><br>
+    Отчество: <strong>{autor["Отчество"]}</strong><br>
+    Фамилия: <strong>{autor["Фамилия"]}</strong><br>
+    email: <strong>{autor["email"]}</strong><br>'''
+    
+    return HttpResponse(test)
+
+
+   
+ 
 
 # def product(request):
 #     items = [
