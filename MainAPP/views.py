@@ -7,11 +7,11 @@ autor = {'Имя': 'Тимофей', 'Отчество': 'Сергеевич', '
 'email': 'mysite@.com'}
 
 items = [
-   {"id": 1, "name": "Кроссовки abibas"},
-   {"id": 2, "name": "Куртка кожаная"},
-   {"id": 3, "name": "Coca-cola 1 литр"},
-   {"id": 4, "name": "Картофель фри"},
-   {"id": 5, "name": "Кепка"},
+   {"id": 1, "name": "Кроссовки abibas", "links": "https://www.wildberries.ru/catalog/194197845/detail.aspx"},
+   {"id": 2, "name": "Куртка кожаная", "links": "https://www.wildberries.ru/catalog/0/search.aspx?search=кожаные%20куртки%20мужские"},
+   {"id": 3, "name": "Coca-cola 1 литр", "links": "https://www.ozon.ru/category/coca-cola-1-litr/"},
+   {"id": 4, "name": "Картофель фри", "links": "https://www.ozon.ru/category/kartofel-fri/"},
+   {"id": 5, "name": "Кепка", "links": "https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory/tags/kepki-muzhskie"},
 ]
 
 def drive(request):
@@ -32,11 +32,11 @@ def about(request):
 
 def item(request, val_id):
     for val in items:
-        if val['id'] == val_id: return HttpResponse(val['name'])
-        return HttpResponse(f'товара с id: {val_id} не существует')
+        if val['id'] == val_id: return HttpResponse(f"<h3><i>{val['name']}</i></h3> <i><a href={val['links']} target='_blank'> ссылка на товар</a></i>")
+    return HttpResponse(f'<i>товара с id: {val_id} не существует</i>')
 
 def all_items(request):
-    spisok = [f"<h3>{i['id']}:</h3> <h4>{i['name']}</h4>" for i in items]
+    spisok = [f"<p>{i['id']}:</p> <h4><i>{i['name']}</i></h4> <p><a href={i['links']} target='_blank'> ссылка на товар</a></p>" for i in items]
     return HttpResponse(f'{i}<br>' for i in spisok)
         
 
