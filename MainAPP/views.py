@@ -7,11 +7,11 @@ autor = {'Имя': 'Тимофей', 'Отчество': 'Сергеевич', '
 'email': 'mysite@.com'}
 
 items = [
-   {"id": 1, "name": "Кроссовки abibas", "links": "https://www.wildberries.ru/catalog/194197845/detail.aspx"},
-   {"id": 2, "name": "Куртка кожаная", "links": "https://www.wildberries.ru/catalog/0/search.aspx?search=кожаные%20куртки%20мужские"},
-   {"id": 3, "name": "Coca-cola 1 литр", "links": "https://www.ozon.ru/category/coca-cola-1-litr/"},
-   {"id": 4, "name": "Картофель фри", "links": "https://www.ozon.ru/category/kartofel-fri/"},
-   {"id": 5, "name": "Кепка", "links": "https://www.wildberries.ru/catalog/aksessuary/golovnye-ubory/tags/kepki-muzhskie"},
+   {"id": 1, "name": "Кроссовки abibas", "links": "http://127.0.0.1:8000/item/1/"},
+   {"id": 2, "name": "Куртка кожаная", "links": "http://127.0.0.1:8000/item/2/"},
+   {"id": 3, "name": "Coca-cola 1 литр", "links": "http://127.0.0.1:8000/item/3/"},
+   {"id": 4, "name": "Картофель фри", "links": "http://127.0.0.1:8000/item/4/"},
+   {"id": 5, "name": "Кепка", "links": "http://127.0.0.1:8000/item/5/"},
 ]
 
 def drive(request):
@@ -32,7 +32,7 @@ def about(request):
 
 def item(request, val_id):
     for val in items:
-        if val['id'] == val_id: return HttpResponse(f"<h3><i>{val['name']}</i></h3> <i><a href={val['links']} target='_blank'> ссылка на товар</a></i>")
+        if val['id'] == val_id: return HttpResponse(f"<h3><i>{val['name']}</i></h3> <i><a href='http://127.0.0.1:8000/items/'> возврат в каталог</a></i>")
     return HttpResponse(f'<i>товара с id: {val_id} не существует</i>')
 
 def all_items(request):
@@ -45,8 +45,8 @@ def all_items(request):
         for i, j in k.items():
             if num < 2:
                 num += 1
-                spisok.append(f"<h2>{i}:</h2> <h2><i>{j}</i></h2>")
-            elif num >1: spisok.append(f"<h4>{i}:</h4> <i><a href={j} target='_blank'> ссылка на товар</a></i>")
+                spisok.append(f"<pre><big>{i}: <i><strong>{j}</strong></i></big></pre>")
+            elif num >1: spisok.append(f"<pre><big><strong>{i}</strong>: <i><a href={j}> ссылка на товар</a></i></big></pre><br>")
 
     return HttpResponse(f'{i}' for i in spisok)
         
