@@ -36,7 +36,18 @@ def item(request, val_id):
     return HttpResponse(f'<i>товара с id: {val_id} не существует</i>')
 
 def all_items(request):
-    spisok = [f"<p>{i['id']}:</p> <h4><i>{i['name']}</i></h4> <p><a href={i['links']} target='_blank'> ссылка на товар</a></p>" for i in items]
-    return HttpResponse(f'{i}<br>' for i in spisok)
+    
+    # spisok = [f"<p>{i['id']}:</p> <h4><i>{i['name']}</i></h4> <p><a href={i['links']} target='_blank'> ссылка на товар</a></p>" for i in items]
+    spisok = []
+    
+    for k in items:
+        num = 0
+        for i, j in k.items():
+            if num < 2:
+                num += 1
+                spisok.append(f"<p>{i}:</p> <h4><i>{j}</i></h4>")
+            elif num >1: spisok.append(f"<p>{i}:</p> <i><a href={j} target='_blank'> ссылка на товар</a></i>")
+
+    return HttpResponse(f'{i}' for i in spisok)
         
 
