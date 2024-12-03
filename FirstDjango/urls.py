@@ -1,13 +1,8 @@
 # from django.contrib import admin
-from django.urls import path
-from MainAPP.views import drive, about, item, all_items
-
+from django.urls import path, include
+from MainAPP import views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('', drive),
-    path('about', about),
-    path('item/<int:val_id>', item),
-    path('items', all_items),
-    
+    path('', include('MainAPP.urls'))
+
 ]
