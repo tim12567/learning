@@ -45,8 +45,8 @@ def all_items(request):
         for i, j in k.items():
             if num < 2:
                 num += 1
-                spisok.append(f"<p>{i}:</p> <h4><i>{j}</i></h4>")
-            elif num >1: spisok.append(f"<p>{i}:</p> <i><a href={j} target='_blank'> ссылка на товар</a></i>")
+                spisok.append(f"<h2>{i}:</h2> <h2><i>{j}</i></h2>")
+            elif num >1: spisok.append(f"<h4>{i}:</h4> <i><a href={j} target='_blank'> ссылка на товар</a></i>")
 
     return HttpResponse(f'{i}' for i in spisok)
         
