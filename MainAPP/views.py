@@ -33,21 +33,21 @@ def about(request):
 def item(request, val_id):
     for val in items:
         if val['id'] == val_id: return HttpResponse(f"<h3><i>{val['name']}</i></h3> <i><a href='http://127.0.0.1:8000/items/'> возврат в каталог</a></i>")
-    return HttpResponse(f'<i>товара с id: {val_id} не существует</i>')
+    return HttpResponse(f'<i>товар с id: {val_id} не существует</i>')
 
 def all_items(request):
     
     # spisok = [f"<p>{i['id']}:</p> <h4><i>{i['name']}</i></h4> <p><a href={i['links']} target='_blank'> ссылка на товар</a></p>" for i in items]
-    spisok = []
+    spisok = ['<h3><ul>Список товаров:</ul></h3>']
     
     for k in items:
         num = 0
         for i, j in k.items():
             if num < 2:
                 num += 1
-                spisok.append(f"<pre><big>{i}: <i><strong>{j}</strong></i></big></pre>")
-            elif num >1: spisok.append(f"<pre><big><strong>{i}</strong>: <i><a href={j}> ссылка на товар</a></i></big></pre><br>")
+                spisok.append(f"<pre><big><ul><li>{i}: <i><strong>{j}</strong></i></li></ul></big></pre>")
+            elif num >1: spisok.append(f"<pre><big><strong><ul><li>{i}:</strong> <i><a href={j}> ссылка на товар</a></li></ul></i></big></pre><br>")
 
-    return HttpResponse(f'{i}' for i in spisok)
+    return HttpResponse(i for i in spisok)
         
 
