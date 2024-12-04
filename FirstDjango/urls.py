@@ -1,6 +1,6 @@
 # from django.contrib import admin
-from django.urls import path, include
-from MainAPP import views
+from django.urls import path, include # type: ignore
+# from MainAPP import views
 
 urlpatterns = [
     path('', include('MainAPP.urls'))
