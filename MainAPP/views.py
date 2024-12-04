@@ -51,18 +51,24 @@ def item(request, val_id):
 
 
 def all_items(request):
-    
-    spisok = ['<h3><ul>Список товаров:</ul></h3>']
-    
-    for k in items:
-        num = 0
-        for i, j in k.items():
-            if num < 2:
-                num += 1
-                spisok.append(f"<pre><big><ul><li>{i}: <i><strong>{j}</strong></i></li></ul></big></pre>")
-            elif num >1: spisok.append(f"<pre><big><strong><ul><li>{i}:</strong> <i><a href={j}> ссылка на товар</a></li></ul></i></big></pre><br>")
+    # spisok = ['<h3><ul>Список товаров:</ul></h3>']
+    # for k in items:
+    #     num = 0
+    #     for i, j in k.items():
+    #         if num < 2:
+    #             num += 1
+    #             spisok.append(f"<pre><big><ul><li>{i}: <i><strong>{j}</strong></i></li></ul></big></pre>")
+    #         elif num >1: spisok.append(f"<pre><big><strong><ul><li>{i}:</strong> <i><a href={j}> ссылка на товар</a></li></ul></i></big></pre><br>")
 
-    return HttpResponse(i for i in spisok)
+    # return HttpResponse(i for i in spisok)
+
+    # slovar = {}
+    # for i in items:
+
+
+    slovar ={'product': items}
+
+    return render(request, 'all_items.html', slovar)
 
 
 # def ride(request):

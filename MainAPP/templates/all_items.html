@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2><ul>Весь список товаров:</ul></h2>
+    {% for i in product%}
+        <big><ul><li><i>номер товара: <b>{{i.id}}</b></i></li></ul></big>
+        <big><ul><i>название товара: <b>{{i.name}}</b></i></ul></big>
+        <big><ul><dl><dt><a href={{i.links}}>ссылка на товар</a></dt></dl></ul></big>
+    {% endfor %}
+    <ul><a href="http://127.0.0.1:8000">обратно на главную страницу</a></ul>
+        
+</body>
+</html>
