@@ -16,10 +16,6 @@ items = [
 
 
 def drive(request):
-#     text = '''<h1>"Изучаем django"</h1>
-# <strong>Автор</strong>: <i>Пармон Т.С.</i><br>'''
-
-#     return HttpResponse(text)
 
     author = {'name': 'Тимофей', 'surname': 'Пармон'}
     pro = {'name': 'Привет'}
@@ -29,59 +25,28 @@ def drive(request):
 
 
 def about(request):
-    test = f'''Имя: <strong>{autor['Имя']}</strong><br>
-    Отчество: <strong>{autor["Отчество"]}</strong><br>
-    Фамилия: <strong>{autor["Фамилия"]}</strong><br>
-    email: <strong>{autor["email"]}</strong><br>'''
 
-    return HttpResponse(test)
-
+    slovar = {'name': 'Тимофей', 'surname': 'Пармон', 'legacy': 'Сергеевич'}
+    return render(request, 'about.html', slovar)
 
 
 def item(request, val_id):
-    # for val in items:
-    #     if val['id'] == val_id: return HttpResponse(f"<h3><i>{val['name']}</i></h3> <i><a href='http://127.0.0.1:8000/items/'> возврат в каталог</a></i>")
-    # return HttpResponse(f'<i>товар с id: {val_id} не существует</i>')
     sylka = {}
     for val in items:
         if val["id"] == val_id:
             sylka.setdefault('code', [val['id'], val['name'], val['links']])
-    context = {'sylka': sylka}
-    return render(request, 'item.html', context)
+            context = {'sylka': sylka}
+            return render(request, 'item.html', context)
+        elif val["id"] == val_id:
+            context = {'sylka': False}
+            return render(request, 'item.html', context)
+    # else: return HttpResponse(f'товар с id: {val_id} не существует')
 
 
 def all_items(request):
-    # spisok = ['<h3><ul>Список товаров:</ul></h3>']
-    # for k in items:
-    #     num = 0
-    #     for i, j in k.items():
-    #         if num < 2:
-    #             num += 1
-    #             spisok.append(f"<pre><big><ul><li>{i}: <i><strong>{j}</strong></i></li></ul></big></pre>")
-    #         elif num >1: spisok.append(f"<pre><big><strong><ul><li>{i}:</strong> <i><a href={j}> ссылка на товар</a></li></ul></i></big></pre><br>")
-
-    # return HttpResponse(i for i in spisok)
-
-    # slovar = {}
-    # for i in items:
-
-
     slovar ={'product': items}
-
     return render(request, 'all_items.html', slovar)
 
-
-# def ride(request):
-#     spisok = []
-#     for k in items:
-#         num = 0
-#         for i, j in k.items():
-#             if num < 5:
-#                 num += 1
-#                 spisok.append(f'{i}: {j}')
-#             # elif num > 1: spisok_2.append(f'{i}: {j}')
-#     new = {'aut': spisok}
-#     return render(request, 'tested.html', new)
 
 
 
