@@ -16,18 +16,15 @@ items = [
 
 
 def drive(request):
-
     author = {'name': 'Тимофей', 'surname': 'Пармон'}
-    pro = {'name': 'Привет'}
-    context = {'aut': author, 'pro': pro}
+    context = {'aut': author}
 
     return render(request, 'drive.html', context)
 
 
 def about(request):
+    return render(request, 'about.html', autor)
 
-    slovar = {'name': 'Тимофей', 'surname': 'Пармон', 'legacy': 'Сергеевич'}
-    return render(request, 'about.html', slovar)
 
 
 def item(request, val_id):
@@ -37,10 +34,8 @@ def item(request, val_id):
             sylka.setdefault('code', [val['id'], val['name'], val['links']])
             context = {'sylka': sylka}
             return render(request, 'item.html', context)
-        elif val["id"] == val_id:
-            context = {'sylka': False}
-            return render(request, 'item.html', context)
-    # else: return HttpResponse(f'товар с id: {val_id} не существует')
+      
+    else: return HttpResponse(f'товар с id: {val_id} не существует')
 
 
 def all_items(request):

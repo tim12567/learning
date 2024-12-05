@@ -7,13 +7,11 @@
 </head>
 <body> 
         <ul>
-            {% if sylka %}
+        
             <pre><big><b>Товар под номером:</b> {{sylka.code.0}}</big></pre>
             <pre><big><b>Наименование товара:</b> {{sylka.code.1}}</big></pre>
             <pre><i><big><a href="http://127.0.0.1:8000/items/">обратно к товарам</a></big></i></pre>
-            {% else %}
-            <p>нет такого товара</p>
-            {% endif %}
+            
         </ul>
     
 </body>
