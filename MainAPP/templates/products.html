@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все товары</title>
+    {% comment %} создаем стиль для таблицы {% endcomment %}
+    <style>
+   table {
+    margin-left: 100px;
+    width:440px;
+    background: black;
+    color: black;
+    border-spacing: 1px;
+    border: 1px;
+    border-color: black;
+   }
+   td, th {
+    background: white;
+    padding: 3px;
+   }
+  </style>
+
+</head>
+<body>
+    <h2><ul>Все товары:</ul></h2>
+    <div >
+        <table>
+            <tr>
+                <th style='width: 65px; background: red; color: white'> Номер</th>
+                <th style='width: 160px; background: red; color: white'> Название</th>
+                <th style='width: 140px; background: red; color: white'> Брэнд</th>
+                <th style='width: 80px; background: red; color: white'> Кол-во</th>
+            </tr>
+        </table>
+            {% for i in ali %}
+            <table>
+                <tr ><th style='width: 70px;'>{{i.id}}</th>
+                    <td style='width: 155px;'><a href="{% url 'page' %}">{{i.name}}</a></td>
+                    <td style='width: 135px;'>{{i.brand}}</td>
+                    <td style='width: 80px;'>{{i.count}}</td>
+                </tr>
+            
+            </table>
+
+            {% endfor %}
+        
+    </div>
+    {% comment %} {{ali.1.name}} {% endcomment %}
+</body>
+</html>

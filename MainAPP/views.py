@@ -1,5 +1,6 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse # type: ignore
+from .models import Item
 
 
 
@@ -15,6 +16,23 @@ items = [
 ]
 
 
+def second_product(request, value):
+    tovar = Item.objects.all()
+    
+    for val in tovar:
+        # val это экземпляр объекта поэтому к нему обращаться надо через точку
+        if val.id == value:
+            tov = {'tov': val}
+            return render(request, 'second_product.html', tov)
+   
+
+
+def products(request):
+    all_product = Item.objects.all()
+    pro = {'ali': all_product}
+    return render(request, 'products.html', pro)
+
+
 def drive(request):
     author = {'name': 'Тимофей', 'surname': 'Пармон'}
     context = {'aut': author}
@@ -24,7 +42,6 @@ def drive(request):
 
 def about(request):
     return render(request, 'about.html', autor)
-
 
 
 def item(request, val_id):
