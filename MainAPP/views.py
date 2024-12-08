@@ -22,8 +22,11 @@ def second_product(request, value):
     for val in tovar:
         # val это экземпляр объекта поэтому к нему обращаться надо через точку
         if val.id == value:
-            tov = {'tov': val}
-            return render(request, 'second_product.html', tov)
+            if val.count != 0:
+                tov = {'tov': val}
+                return render(request, 'second_product.html', tov)
+            else: return HttpResponse(f"<ul><b>товар {val.name} на складе кончился</b><ul>")
+    return HttpResponse(f'<ul><b>товара под номером {value} не существует</b></ul>')
    
 
 

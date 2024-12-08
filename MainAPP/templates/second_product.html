@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <ul><h3>{{tov.name}}</h3></ul>
+    <ul><h2>{{tov.name}}</h2>
+    <h2>{{tov.brand}}</h2>
+    <h2>Кол-во на складе: {{tov.count}}</h2></ul>
+
+    <ul><a href="{% url "next_page" %}">обратно к товарам</a></ul>
     
 </body>
 </html>

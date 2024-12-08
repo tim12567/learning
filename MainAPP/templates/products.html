@@ -8,7 +8,7 @@
     <style>
    table {
     margin-left: 100px;
-    width:440px;
+    width:530px;
     background: black;
     color: black;
     border-spacing: 1px;
@@ -31,14 +31,16 @@
                 <th style='width: 160px; background: red; color: white'> Название</th>
                 <th style='width: 140px; background: red; color: white'> Брэнд</th>
                 <th style='width: 80px; background: red; color: white'> Кол-во</th>
+                <th style='width: 90px; background: red; color: white'> Описание</th>
             </tr>
         </table>
             {% for i in ali %}
             <table>
                 <tr ><th style='width: 70px;'>{{i.id}}</th>
-                    <td style='width: 155px;'><a href="{% url 'page' %}">{{i.name}}</a></td>
+                    <td style='width: 155px;'><a href="{% url 'page' i.id %}">{{i.name}}</a></td>
                     <td style='width: 135px;'>{{i.brand}}</td>
                     <td style='width: 80px;'>{{i.count}}</td>
+                    <td style='width: 90px;'>{{i.properties}}</td>
                 </tr>
             
             </table>
