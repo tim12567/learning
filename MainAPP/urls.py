@@ -11,6 +11,7 @@ urlpatterns = [
     path('items/', views.all_items),
     path('products/', views.products, name='next_page'),
     path('products/<int:value>', views.second_product, name='page'),
+    
 ]
 
 

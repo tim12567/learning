@@ -1,53 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все товары</title>
-    {% comment %} создаем стиль для таблицы {% endcomment %}
-    <style>
-   table {
-    margin-left: 100px;
-    width:530px;
-    background: black;
-    color: black;
-    border-spacing: 1px;
-    border: 1px;
-    border-color: black;
-   }
-   td, th {
-    background: white;
-    padding: 3px;
-   }
-  </style>
+{% extends "base.html" %}
 
-</head>
+{% block content %} 
+
 <body>
     <h2><ul>Все товары:</ul></h2>
-    <div >
-        <table>
-            <tr>
-                <th style='width: 65px; background: red; color: white'> Номер</th>
-                <th style='width: 160px; background: red; color: white'> Название</th>
-                <th style='width: 140px; background: red; color: white'> Брэнд</th>
-                <th style='width: 80px; background: red; color: white'> Кол-во</th>
-                <th style='width: 90px; background: red; color: white'> Описание</th>
-            </tr>
-        </table>
-            {% for i in ali %}
-            <table>
-                <tr ><th style='width: 70px;'>{{i.id}}</th>
-                    <td style='width: 155px;'><a href="{% url 'page' i.id %}">{{i.name}}</a></td>
-                    <td style='width: 135px;'>{{i.brand}}</td>
-                    <td style='width: 80px;'>{{i.count}}</td>
-                    <td style='width: 90px;'>{{i.properties}}</td>
+    <table>
+        <thead>
+                <tr>
+                    <th class='cl1'>Номер</th>
+                    <th class='cl2'>Название товара</th>
+                    <th class='cl3'>Марка</th>
+                    <th class='cl4'>Кол-во</th>
+                    <th class='cl5'>Описание</th>
                 </tr>
+        </thead>
+        <tbody>
+                    {% for i in ali %}
+                    <tr>
+                        <td>{{i.id}}</td>
+                        <td><a href="{% url 'page' i.id %}">{{i.name}}</a></td>
+                        <td>{{i.brand}}</td>
+                        <td>{{i.count}}</td>
+                        <td>{{i.properties}}</td>
+                    </tr>
+                    {% endfor %}
+        </tbody>  
             
-            </table>
+    </table>
 
-            {% endfor %}
-        
-    </div>
-    {% comment %} {{ali.1.name}} {% endcomment %}
 </body>
 </html>
+{% endblock  %}
+
