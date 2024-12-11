@@ -10,7 +10,6 @@
   
     border-radius: 10%;
     
-    
     /* max-width: говорит что максимум размер рамки не больше 1400px */
     /* max-width: 1400px; */
     
@@ -40,6 +39,7 @@
     align-self: center;
 
   }
+
 
 table{
     border: 1px solid black;

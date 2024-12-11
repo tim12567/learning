@@ -1,6 +1,8 @@
 from django.shortcuts import render # type: ignore
 from django.http import HttpResponse # type: ignore
 from .models import Item
+# добавляем обработку исключений
+from django.core.exceptions import ObjectDoesNotExist
 
 
 
@@ -17,13 +19,13 @@ items = [
 
 
 def second_product(request, value):
-    tovar = Item.objects.all()
-    for val in tovar:
-        if val.id == value:
-            tov = {'tov': val}
-            return render(request, 'second_product.html', tov)
-    return HttpResponse(f'<ul><h4>товара под номером {value} не существует</h4></ul>')
-   
+    # получаем конкретный экземпляр по его id
+    try: tovar = Item.objects.get(id=value)
+    except ObjectDoesNotExist: return HttpResponse(f'<ul><h4>товара под номером {value} не существует</h4></ul>')
+    else:
+        tov = {'tov': tovar}
+        return render(request, 'second_product.html', tov)
+    
 
 def products(request):
     all_product = Item.objects.all()
