@@ -9,9 +9,12 @@
 ## Запуск ipython в контексте приложений django
 '''python manage.py shell_plus --ipython'''
 
-## Выгрузить данные из БД
+### Выгрузить и загрузка данные из БД создадем папку fixtures в нашем приложении
+## Выгрузка БД
 '''python manage.py dumpdata MainAPP --indent 4 > ~/projects/FirstDjango/MainAPP/fixtures/base.json
 '''
+## Загрузка БД
+'''python manage.py loaddata MainAPP ~/projects/FirstDjango/MainAPP/fixtures/base.json'''
 
 ## Дополнительно
 1. полезное дополнение для джанго
