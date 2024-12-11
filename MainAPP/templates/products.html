@@ -10,20 +10,18 @@
                     <th class='cl1'>Номер</th>
                     <th class='cl2'>Название товара</th>
                     <th class='cl3'>Фирма</th>
-                    {% comment %} <th class='cl4'>Кол-во</th> {% endcomment %}
                     <th class='cl5'>Описание</th>
                 </tr>
         </thead>
         <tbody>
-                    {% for i in ali %}
-                    <tr>
-                        <td>{{i.id}}</td>
-                        <td><a href="{% url 'page' i.id %}">{{i.name}}</a></td>
-                        <td>{{i.brand}}</td>
-                        {% comment %} <td>{{i.count}}</td> {% endcomment %}
-                        <td>{{i.properties}}</td>
-                    </tr>
-                    {% endfor %}
+                {% for i in ali %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td><a href="{% url 'page' i.id %}">{{i.name}}</a></td>
+                    <td>{{i.brand}}</td>
+                    <td>{{i.properties}}</td>
+                </tr>
+                {% endfor %}
         </tbody>  
             
     </table>
