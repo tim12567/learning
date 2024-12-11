@@ -46,16 +46,17 @@ table{
     /* border-collapse: collapse; */
     /* border-width: 5px; */
     /* background-color: aqua; */
-    width: 70%;
+    width: 60%;
 }
 
 th{
     border: 1px solid black;
-    
     padding: 10px;
     background-color: aquamarine;
     text-align: center;
+    font-size: large;
     font-family: 'Courier New', Courier, monospace;
+    
     
 }
 
@@ -76,3 +77,4 @@ th{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
+  
