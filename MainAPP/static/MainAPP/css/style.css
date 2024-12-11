@@ -2,11 +2,11 @@
     display: grid;
     gap: 10px;
   
-    /* background-color: aqua;
-    border: 5px solid rgb(203, 83, 83); */
+    /* background-color: rgb(11, 12, 12);
+    border: 5px solid rgb(26, 24, 24); */
   
     grid-template-columns: 300px;
-    grid-template-rows: repeat(3, 80px);
+    grid-template-rows: repeat(4, 80px);
   
     border-radius: 10%;
     
@@ -14,7 +14,7 @@
     /* max-width: 1400px; */
     
     margin-right: 1000px;
-    margin-top: 100px;
+    margin-bot: 50px;
     /* отступы внутри рамки */
     padding: 10px;
   
@@ -24,13 +24,14 @@
     font-size: x-large;
     font-style: italic;
     font-weight: 500;
+    
   }
 
   .element {
     display: grid;
     gap: 5px;
-    border: 2px solid black;
-    background-color: #a3d4c3;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #ade6d2;
     border-radius: 5%;
     align-content: center;
     justify-content: center;

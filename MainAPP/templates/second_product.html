@@ -3,16 +3,11 @@
 {% block content %} 
 
 <body >
-    {% if tov.count > 0 %}
     <div class='grid'>
     <div class='element el-1'><strong>Тип товара:</strong> {{tov.name}}</div>
     <div class='element el-2'><b>Марка товара:</b> {{tov.brand}}</div>
     <div class='element el-3'><b>Описание:</b> {{tov.properties}}</div>
-
-    {% elif tov.count < 1 %}
-    <ul><h2>Товар "{{tov.name}}" закончился! Ожидается поступление новых товаров.</h2></ul>
-    {% endif %}
-    
+    <div class='element el-3'><b>Кол-во:</b> {{tov.count | default:"товара нет в наличии"}}</div>
     </div>
     <h2><ul><a href="{% url "next_page" %}">обратно к товарам</a></ul></h2>
     
