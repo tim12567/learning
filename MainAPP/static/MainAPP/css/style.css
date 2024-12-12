@@ -14,7 +14,7 @@
     /* max-width: 1400px; */
     
     margin-right: 1000px;
-    margin-bot: 50px;
+    margin-bottom: 50px;
     /* отступы внутри рамки */
     padding: 10px;
   
@@ -27,7 +27,7 @@
     
   }
 
-  .element {
+  .element{
     display: grid;
     gap: 5px;
     border: 2px solid rgb(255, 255, 255);
@@ -36,12 +36,26 @@
     align-content: center;
     justify-content: center;
     text-align: center;
-    border-radius: 10%;
     align-self: center;
-
+    transition: 0.6s;
+  }
+  .element:hover{
+    display: grid;
+    gap: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #ade6d2;
+    border-radius: 10%;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    font-size: larger;
+    background-color: dodgerblue;
+    color: aliceblue;
   }
 
 
+/* другой файл html */
 table{
     border: 1px solid black;
     /* border-collapse: collapse; */
@@ -57,8 +71,6 @@ th{
     text-align: center;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
-    
-    
 }
 
   td{
@@ -70,6 +82,26 @@ th{
     background-color: #e7e7e0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
+
+
+  .id{
+    background-color: rgb(226, 226, 229);
+    font-weight: bold;
+    transition: background-color 0.6s;
+  }
+  .id:hover{
+    background-color: #6a91a8;
+    font-weight: bold;
+  }
+  a{
+    color: black;
+    transition: 0.6s;
+  }
+  a:hover{
+    color: rgb(8, 24, 175);
+  }
+  
+
 
   body{
     padding-top: 3%;
