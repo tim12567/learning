@@ -1,0 +1,95 @@
+[
+{
+    "model": "MainAPP.color",
+    "pk": 1,
+    "fields": {
+        "name": "blue"
+    }
+},
+{
+    "model": "MainAPP.color",
+    "pk": 2,
+    "fields": {
+        "name": "green"
+    }
+},
+{
+    "model": "MainAPP.color",
+    "pk": 3,
+    "fields": {
+        "name": "red"
+    }
+},
+{
+    "model": "MainAPP.color",
+    "pk": 4,
+    "fields": {
+        "name": "blue"
+    }
+},
+{
+    "model": "MainAPP.item",
+    "pk": 1,
+    "fields": {
+        "name": "Кроссовки",
+        "brand": "abibas",
+        "count": 3,
+        "properties": "черные из кожы",
+        "colors": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "MainAPP.item",
+    "pk": 2,
+    "fields": {
+        "name": "Куртка",
+        "brand": "reebok",
+        "count": 1,
+        "properties": "синия спортивная",
+        "colors": [
+            1
+        ]
+    }
+},
+{
+    "model": "MainAPP.item",
+    "pk": 3,
+    "fields": {
+        "name": "Футболка",
+        "brand": "nike",
+        "count": 8,
+        "properties": "белая слим-фит",
+        "colors": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "MainAPP.item",
+    "pk": 4,
+    "fields": {
+        "name": "Штаны",
+        "brand": "puma",
+        "count": 4,
+        "properties": "спортивные в полоску",
+        "colors": []
+    }
+},
+{
+    "model": "MainAPP.item",
+    "pk": 5,
+    "fields": {
+        "name": "Рюкзак",
+        "brand": "kappa",
+        "count": 0,
+        "properties": "походный зеленый",
+        "colors": [
+            4
+        ]
+    }
+}
+]
