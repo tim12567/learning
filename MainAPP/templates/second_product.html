@@ -6,11 +6,11 @@
     <div class='grid'>
     <div class='element el-1'><strong>Тип товара:</strong> {{tov.name}}</div>
     <div class='element el-2'><b>Марка товара:</b> {{tov.brand}}</div>
-    <div class='element el-3'><b>Описание:</b> {{tov.properties}}</div>
+    <div class='element el-3'><b>Описание:</b> {{tov.properties}} {{col.name | default:"не имеет цвета"}}</div>
     <div class='element el-3'><b>Кол-во:</b> {{tov.count | default:"товара нет в наличии"}}</div>
     </div>
     <h2><ul><a href="{% url "next_page" %}">обратно к товарам</a></ul></h2>
-   
+    
 </body>
 </html>
 {% endblock  %}
